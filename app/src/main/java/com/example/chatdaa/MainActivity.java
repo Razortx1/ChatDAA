@@ -8,7 +8,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    EditText txt_username, txtcontraseña;
+    String rol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void login(View s){
-        EditText ecorreo = this.findViewById(R.id.txt_user);
-        EditText epass = this.findViewById(R.id.pass_user);
-        String correo = ecorreo.getText().toString();
-        String pass = epass.getText().toString();
-        if (correo.equals("Alumno")){
+        txt_username = this.findViewById(R.id.txt_user);
+        txtcontraseña = this.findViewById(R.id.pass_user);
+        String txt_user = txt_username.getText().toString();
+        String pass = txtcontraseña.getText().toString();
+        if (txt_user.equals("Alumno")){
             if (pass.equals("123")){
                 Intent i = new Intent(this,InicioAlumno.class);
                 startActivity(i);
@@ -30,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Contraseña Equivocada", Toast.LENGTH_SHORT).show();
             }
         }
-        else if (correo.equals("Docente")){
+        else if (txt_user.equals("Docente")){
             if (pass.equals("123")){
                 Intent i = new Intent(this,InicioDocentes.class);
                 startActivity(i);
@@ -40,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Contraseña Equivocada", Toast.LENGTH_SHORT).show();
             }
         }
-        else if (correo.equals("Apoderado")) {
+        else if (txt_user.equals("Apoderado")) {
             if (pass.equals("123")) {
                 Intent i = new Intent(this, InicioApoderados.class);
                 startActivity(i);
@@ -49,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Contraseña Equivocada", Toast.LENGTH_SHORT).show();
             }
         }
-        else if (correo.equals("Administrator")){
+        else if (txt_user.equals("Administrator")){
             if (pass.equals("123")){
                 Intent i = new Intent(this,inicio_admin.class);
                 startActivity(i);
@@ -67,5 +75,12 @@ public class MainActivity extends AppCompatActivity {
     public void cambiar_contra(View v){
         Intent o = new Intent(getApplicationContext(), CambioContra.class);
         startActivity(o);}
+
+    public void iniciarFirebase(){
+        FirebaseApp.initializeApp(getApplicationContext());
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+
+    }
 
 }

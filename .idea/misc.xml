@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/COP412L/Desktop/ChatDAA/app/src/main/res/layout/activity_inicio_admin.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/COP412L/Desktop/ChatDAA/app/src/main/res/layout/fragment_agregar_usuario.xml" value="0.33" />
+        <entry key="..\:/Users/COP412L/Desktop/ChatDAA/app/src/main/res/layout/fragment_eliminar_edit_user.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/COP412L/Desktop/ChatDAA/app/src/main/res/layout/fragment_opciones_admin.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Razortx1/AndroidStudioProjects/ChatDAA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.236" />
         <entry key="..\:/Users/Razortx1/AndroidStudioProjects/ChatDAA/app/src/main/res/layout/activity_cambio_contra.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/Razortx1/AndroidStudioProjects/ChatDAA/app/src/main/res/layout/activity_chat.xml" value="0.24547101449275363" />
