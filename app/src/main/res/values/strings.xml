@@ -27,8 +27,10 @@
     <string name="enviar">Enviar</string>
     <string name="cartel_inicio_admin">Opciones de Administrador</string>
     <string name="btn_agregar_user">Agregar Usuario</string>
-    <string name="btn_editar_user">Editar/Eliminar Usuario</string>
+    <string name="btn_editar_delete_user">Editar/Eliminar Usuario</string>
     <string name="txthint_rut">Ingrese Rut del Usuario</string>
+    <string name="btn_editar_user">Editar este Usuario</string>
+    <string name="btn_delete_user">Eliminar este Usuario</string>
 
     <string name="abrir_drawer">Drawer Abierto</string>
     <string name="cerrar_drawer">Drawer Cerrado</string>
