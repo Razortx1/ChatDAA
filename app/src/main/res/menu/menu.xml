@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/inicio"
+        android:title="@string/inicio" />
+    <item
+        android:id="@+id/chat_r"
+        android:title="@string/chat_reciente" />
+    <item
+        android:id="@+id/cerrar_sesion"
+        android:title="@string/cerrar_cesion" />
+</menu>

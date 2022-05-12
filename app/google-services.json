@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "289922225881",
+    "project_id": "chatdaa-d42a4",
+    "storage_bucket": "chatdaa-d42a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289922225881:android:bd7eb91d45d33e413b50c8",
+        "android_client_info": {
+          "package_name": "com.example.chatdaa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289922225881-v094prsvbj81k7dfgi4153bqap25ge9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2qJUIS2W439yS_DaFzJLenOuabJMMpcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289922225881-v094prsvbj81k7dfgi4153bqap25ge9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

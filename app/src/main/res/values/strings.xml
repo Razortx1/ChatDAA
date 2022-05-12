@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ChatDAA</string>
+    <string name="cartel_bienvenido">Bienvenido</string>
+    <string name="user_text">Ingrese el nombre de Usuario</string>
+    <string name="pass_text">Ingrese la contraseña</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="cartel_docente">Docentes</string>
+    <string name="cartel_chat">Chat</string>
+    <string name="btn_docente">Docente</string>
+    <string name="inicio">Inicio</string>
+    <string name="chat_reciente">Chat Reciente</string>
+    <string name="chat_mensaje">Escribe un mensaje aqui</string>
+    <string name="nombre">Nombre</string>
+    <string name="cartel_inalumnos">Alumnos/as</string>
+    <string name="cartel_indeocente">Cursos</string>
+    <string name="curso">Curso</string>
+    <string name="cerrar_cesion">Cerrar Sesion</string>
+    <string name="cambiar_contra">Cambiar contraseña</string>
+    <string name="rol">Rol</string>
+    <string name="ocu_user">Ocupacion del usuario:</string>
+    <string name="rut">Rut</string>
+    <string name="rut_user">Rut del usuario:</string>
+    <string name="cartel_cambio_contra">Cambio de contraseña</string>
+    <string name="nueva_contra">Ingrese su nueva contraseña</string>
+    <string name="antigua_contra">Ingrese su antigua contraseña</string>
+    <string name="aplicar_cambios">Aplicar Cambios</string>
+    <string name="enviar">Enviar</string>
+    <string name="cartel_inicio_admin">Opciones de Administrador</string>
+    <string name="btn_agregar_user">Agregar Usuario</string>
+    <string name="btn_editar_user">Editar/Eliminar Usuario</string>
+    <string name="txthint_rut">Ingrese Rut del Usuario</string>
+
+    <string name="abrir_drawer">Drawer Abierto</string>
+    <string name="cerrar_drawer">Drawer Cerrado</string>
+    <string name="usuario">Usuario</string>
+    <string name="string_cerrar_cesion" />
+    <string name="string_string_cerrar_cesion" />
+</resources>

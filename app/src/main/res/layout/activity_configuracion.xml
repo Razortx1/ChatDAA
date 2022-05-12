@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/redgrey"
+    tools:context=".Configuracion">
+
+    <ImageView
+        android:id="@+id/image_user2"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/name_user2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_image"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/name_user2"
+        android:layout_width="170dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="73dp"
+        android:text="@string/usuario"
+        android:textAlignment="textStart"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/txv_verrol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_user2" />
+
+    <TextView
+        android:id="@+id/txv_RUT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="91dp"
+        android:text="@string/rut_user"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txv_CambiarContraseña"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txv_verrol" />
+
+    <TextView
+        android:id="@+id/txv_rut_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/rut"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txv_RUT" />
+
+    <TextView
+        android:id="@+id/txv_Rol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
+        android:text="@string/rol"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txv_verrol" />
+
+    <TextView
+        android:id="@+id/txv_verrol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="74dp"
+        android:text="@string/ocu_user"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txv_RUT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_user2" />
+
+    <TextView
+        android:id="@+id/txv_CambiarContraseña"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="89dp"
+        android:minHeight="48dp"
+        android:onClick="cambiar_contra"
+        android:text="@string/cambiar_contra"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#1976D2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cerrar_sesion_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txv_RUT" />
+
+    <Button
+        android:id="@+id/btn_cerrar_sesion_2"
+        android:layout_width="223dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="67dp"
+        android:backgroundTint="@color/light_red"
+        android:onClick="Cerrar_sesion_conf"
+        android:text="@string/cerrar_cesion"
+        android:textColor="#283593"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txv_CambiarContraseña" />
+</androidx.constraintlayout.widget.ConstraintLayout>

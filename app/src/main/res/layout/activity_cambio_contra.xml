@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/redgrey"
+    tools:context=".CambioContra">
+
+    <TextView
+        android:id="@+id/txv_Cambio_Contraseña"
+        android:layout_width="217dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="89dp"
+        android:text="@string/cartel_cambio_contra"
+        android:textAlignment="textStart"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/txt_antigua_contra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_antigua_contra"
+        android:layout_width="276dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="54dp"
+        android:ems="10"
+        android:hint="@string/antigua_contra"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/txt_nueva_contra"
+        app:layout_constraintEnd_toEndOf="@+id/txt_nueva_contra"
+        app:layout_constraintStart_toStartOf="@+id/txt_nueva_contra"
+        app:layout_constraintTop_toBottomOf="@+id/txv_Cambio_Contraseña" />
+
+    <EditText
+        android:id="@+id/txt_nueva_contra"
+        android:layout_width="271dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginBottom="161dp"
+        android:ems="10"
+        android:hint="@string/nueva_contra"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btn_actualizar_cambios"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_antigua_contra" />
+
+    <Button
+        android:id="@+id/btn_actualizar_cambios"
+        android:layout_width="211dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="146dp"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="ir_a_inicio"
+        android:text="@string/aplicar_cambios"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nueva_contra" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
