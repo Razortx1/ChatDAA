@@ -26,7 +26,8 @@
         android:layout_height="0dp"
         android:layout_marginStart="33dp"
         android:layout_marginEnd="33dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="9dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/txthint_rut"
         android:inputType="textPersonName"
@@ -34,8 +35,7 @@
         app:layout_constraintBottom_toTopOf="@+id/txt_name_edit_delete_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txv_edit_delete_user"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/txv_edit_delete_user" />
 
     <EditText
         android:id="@+id/txt_name_edit_delete_user"
@@ -44,6 +44,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="13dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/user_text"
         android:inputType="textPersonName"
@@ -51,16 +52,16 @@
         app:layout_constraintBottom_toTopOf="@+id/txt_pass_edit_delete_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_rut_edit_delete_user"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_rut_edit_delete_user" />
 
     <EditText
         android:id="@+id/txt_pass_edit_delete_user"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/pass_text"
         android:inputType="textPassword"
@@ -68,8 +69,7 @@
         app:layout_constraintBottom_toTopOf="@+id/spi_rol"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_name_edit_delete_user"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_name_edit_delete_user" />
 
     <Spinner
         android:id="@+id/spi_rol"
@@ -77,13 +77,28 @@
         android:layout_height="0dp"
         android:layout_marginStart="59dp"
         android:layout_marginEnd="59dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="12dp"
         android:entries="@array/roles"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/spi_alumno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pass_edit_delete_user" />
+
+    <Spinner
+        android:id="@+id/spi_alumno"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="18dp"
+        android:entries="@android:array/organizationTypes"
+        android:saveEnabled="false"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/btn_edit_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_pass_edit_delete_user" />
+        app:layout_constraintTop_toBottomOf="@+id/spi_rol" />
 
     <Button
         android:id="@+id/btn_edit_user"
@@ -91,7 +106,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="73dp"
         android:layout_marginEnd="73dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="17dp"
         android:backgroundTint="@color/gray_light"
         android:text="@string/btn_editar_user"
         android:textColor="@color/black"
@@ -99,7 +114,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_delete_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spi_rol" />
+        app:layout_constraintTop_toBottomOf="@+id/spi_alumno" />
 
     <Button
         android:id="@+id/btn_delete_user"
@@ -107,7 +122,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="73dp"
         android:layout_marginEnd="73dp"
-        android:layout_marginBottom="83dp"
+        android:layout_marginBottom="7dp"
         android:backgroundTint="@color/gray_light"
         android:text="@string/btn_delete_user"
         android:textColor="@color/black"

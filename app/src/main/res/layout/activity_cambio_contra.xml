@@ -51,13 +51,12 @@
         android:id="@+id/btn_actualizar_cambios"
         android:layout_width="211dp"
         android:layout_height="69dp"
-        android:layout_marginStart="96dp"
         android:layout_marginBottom="146dp"
         android:backgroundTint="@color/teal_200"
-        android:onClick="ir_a_inicio"
         android:text="@string/aplicar_cambios"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_nueva_contra" />
 
