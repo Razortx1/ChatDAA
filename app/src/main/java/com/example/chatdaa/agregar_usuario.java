@@ -58,18 +58,18 @@ public class agregar_usuario extends DialogFragment {
                 String id = UUID.randomUUID().toString();
 
                 Usuario user = new Usuario();
-                if (rol.equals("Selecciona un Rol")){
-                    Toast.makeText(getContext(), "Falta seleccionar un Rol", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    user.setId(id);
-                    user.setRut(rut);
-                    user.setUser_name(user_name);
-                    user.setContraseña(contraseña);
-                    user.setRol(rol);
-                    databaseReference.child("Usuario").child(id).setValue(user);
-                    Toast.makeText(getContext(), "Usuario creado con exito", Toast.LENGTH_SHORT).show();
-                }
+                    if(rut.isEmpty() || user_name.isEmpty() || contraseña.isEmpty() || rol.equals("Selecciona un Rol")) {
+                        Toast.makeText(getContext(), "Falta rellenar cambios", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        user.setId(id);
+                        user.setRut(rut);
+                        user.setUser_name(user_name);
+                        user.setContraseña(contraseña);
+                        user.setRol(rol);
+                        databaseReference.child("Usuario").child(id).setValue(user);
+                        Toast.makeText(getContext(), "Usuario creado con exito", Toast.LENGTH_SHORT).show();
+                    }
             }
         });
         return v;
