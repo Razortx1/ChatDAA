@@ -48,7 +48,7 @@ public class lista_usuarios extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 usuario.clear();
                 for (DataSnapshot objeto: snapshot.getChildren()) {
-                    Usuario user =objeto.getValue(Usuario.class);
+                    Usuario user = objeto.getValue(Usuario.class);
                     if (user.getRol().equals("Administrador")){
                     }
                     else{usuario.add(user);}
@@ -65,6 +65,8 @@ public class lista_usuarios extends Fragment {
                         bundle.putString("username", user.getUser_name());
                         bundle.putString("rut", user.getRut());
                         bundle.putString("contraseña", user.getContraseña());
+                        bundle.putString("id", user.getId());
+                        bundle.putString("rol", user.getRol());
                         getParentFragmentManager().setFragmentResult("key", bundle);
 
                         eliminar_edit_user eliminarEditUser = new eliminar_edit_user();
