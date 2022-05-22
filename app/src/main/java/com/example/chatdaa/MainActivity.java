@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         iniciarFirebase();
     }
     public void login(View s){
-        txt_username = this.findViewById(R.id.txt_user);
+        txt_username = this.findViewById(R.id.txt_user_rut);
         txtcontraseña = this.findViewById(R.id.pass_user);
         String txt_user = txt_username.getText().toString();
         String pass = txtcontraseña.getText().toString();
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void cambiar_contra(View v) {
-        txt_username = this.findViewById(R.id.txt_user);
+        txt_username = this.findViewById(R.id.txt_user_rut);
         String txtusername = txt_username.getText().toString();
         if (txtusername.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Para poder cambiar la contraseña, al menos ingrese nombre", Toast.LENGTH_SHORT).show();

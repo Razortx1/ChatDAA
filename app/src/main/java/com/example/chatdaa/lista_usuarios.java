@@ -69,12 +69,23 @@ public class lista_usuarios extends Fragment {
                         bundle.putString("rol", user.getRol());
                         getParentFragmentManager().setFragmentResult("key", bundle);
 
-                        eliminar_edit_user eliminarEditUser = new eliminar_edit_user();
-                        FragmentManager m = getActivity().getSupportFragmentManager();
-                        FragmentTransaction t = m.beginTransaction();
-                        t.replace(R.id.fragment_admin, eliminarEditUser);
-                        t.addToBackStack(null);
-                        t.commit();
+
+                        if (user.getRol().equals("Apoderado")) {
+                            editar_eliminar_apoderado apoderado = new editar_eliminar_apoderado();
+                            FragmentManager h = getActivity().getSupportFragmentManager();
+                            FragmentTransaction f = h.beginTransaction();
+                            f.replace(R.id.fragment_admin, apoderado);
+                            f.addToBackStack(null);
+                            f.commit();
+                        }
+                        else{
+                            eliminar_edit_user eliminarEditUser = new eliminar_edit_user();
+                            FragmentManager m = getActivity().getSupportFragmentManager();
+                            FragmentTransaction t = m.beginTransaction();
+                            t.replace(R.id.fragment_admin, eliminarEditUser);
+                            t.addToBackStack(null);
+                            t.commit();
+                        }
                     }
                 });
 

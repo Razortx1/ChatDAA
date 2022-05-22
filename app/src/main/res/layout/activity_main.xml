@@ -34,12 +34,12 @@
         android:layout_marginBottom="95dp"
         android:text="@string/cartel_bienvenido"
         app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/txt_user"
+        app:layout_constraintBottom_toTopOf="@+id/txt_user_rut"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txt_user"
+        android:id="@+id/txt_user_rut"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="56dp"
@@ -85,5 +85,5 @@
         app:layout_constraintBottom_toTopOf="@+id/txv_CambiarContraseña2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_user" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_user_rut" />
 </androidx.constraintlayout.widget.ConstraintLayout>

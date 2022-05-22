@@ -1,5 +1,6 @@
 package com.example.chatdaa;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +31,7 @@ public class eliminar_edit_user extends Fragment {
     Button btnactualizar, btneliminar;
     EditText txtusername, txtrut, txtcontraseña;
     Spinner spi_curso;
-    String id, rol, id_curso, name_curso;
+    String id, rol, id_curso;
 
     View view;
     @Override
@@ -46,7 +47,6 @@ public class eliminar_edit_user extends Fragment {
                 contraseña = Hash.getHash(contraseña, "md5");
                 id = result.getString("id");
                 rol = result.getString("rol");
-                name_curso = spi_curso.getSelectedItem().toString();
                 id_curso = UUID.randomUUID().toString();
 
 
@@ -69,6 +69,7 @@ public class eliminar_edit_user extends Fragment {
             @Override
             public void onClick(View view) {
                 setBtnactualizar(view);
+                salirFragment();
             }
         });
 
@@ -77,6 +78,7 @@ public class eliminar_edit_user extends Fragment {
             @Override
             public void onClick(View view) {
                 setBtneliminar(view);
+                salirFragment();
             }
         });
 
@@ -104,6 +106,7 @@ public class eliminar_edit_user extends Fragment {
 
         Curso curso = new Curso();
         curso.setId_curso(id_curso);
+        String name_curso = spi_curso.getSelectedItem().toString();
         curso.setNombre_curso(name_curso);
         curso.setId_usuarios(id);
         Toast.makeText(getContext(), "Este usuario fue actualizado exitosamente", Toast.LENGTH_SHORT).show();
@@ -111,6 +114,13 @@ public class eliminar_edit_user extends Fragment {
     public void setBtneliminar(View view){
         databaseReference.child("Usuario").child(id).removeValue();
         Toast.makeText(getContext(), "Este usuario fue eliminado exitosamente", Toast.LENGTH_SHORT).show();
+    }
+
+    public void salirFragment(){
+        Activity activity = getActivity();
+        if (activity != null){
+            activity.onBackPressed();
+        }
     }
 
     public void iniciarFirebase(){
