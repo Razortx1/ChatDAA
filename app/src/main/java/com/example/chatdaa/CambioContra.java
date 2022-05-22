@@ -22,6 +22,8 @@ public class CambioContra extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cambio_contra);
 
+        iniciarFirebase();
+
         txt_nueva_contraseña = (EditText) findViewById(R.id.txt_nueva_contra);
         txt_antigua_contraseña = (EditText) findViewById(R.id.txt_antigua_contra);
 

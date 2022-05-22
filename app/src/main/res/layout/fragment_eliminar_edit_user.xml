@@ -80,19 +80,19 @@
         android:layout_marginBottom="12dp"
         android:entries="@array/roles"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/spi_alumno"
+        app:layout_constraintBottom_toTopOf="@+id/spi_curso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_pass_edit_delete_user" />
 
     <Spinner
-        android:id="@+id/spi_alumno"
+        android:id="@+id/spi_curso"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="59dp"
         android:layout_marginEnd="59dp"
         android:layout_marginBottom="18dp"
-        android:entries="@android:array/organizationTypes"
+        android:entries="@array/curso"
         android:saveEnabled="false"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/btn_edit_user"
@@ -114,7 +114,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_delete_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spi_alumno" />
+        app:layout_constraintTop_toBottomOf="@+id/spi_curso" />
 
     <Button
         android:id="@+id/btn_delete_user"

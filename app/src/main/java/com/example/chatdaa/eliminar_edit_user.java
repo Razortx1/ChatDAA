@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,7 +18,10 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.UUID;
+
 import Hash.Hash;
+import Modelo.Curso;
 import Modelo.Usuario;
 
 public class eliminar_edit_user extends Fragment {
@@ -25,7 +29,8 @@ public class eliminar_edit_user extends Fragment {
     DatabaseReference databaseReference;
     Button btnactualizar, btneliminar;
     EditText txtusername, txtrut, txtcontraseña;
-    String id, rol;
+    Spinner spi_curso;
+    String id, rol, id_curso, name_curso;
 
     View view;
     @Override
@@ -41,6 +46,8 @@ public class eliminar_edit_user extends Fragment {
                 contraseña = Hash.getHash(contraseña, "md5");
                 id = result.getString("id");
                 rol = result.getString("rol");
+                name_curso = spi_curso.getSelectedItem().toString();
+                id_curso = UUID.randomUUID().toString();
 
 
                 txtusername.setText(username);
@@ -83,6 +90,7 @@ public class eliminar_edit_user extends Fragment {
         txtrut = (EditText) view.findViewById(R.id.txt_rut_edit_delete_user);
         txtusername = (EditText) view.findViewById(R.id.txt_name_edit_delete_user);
         txtcontraseña = (EditText) view.findViewById(R.id.txt_pass_edit_delete_user);
+        spi_curso = (Spinner) view.findViewById(R.id.spi_curso);
     }
     public void setBtnactualizar(View view){
         Usuario user = new Usuario();
@@ -92,6 +100,12 @@ public class eliminar_edit_user extends Fragment {
         user.setContraseña(Hash.md5("123"));
         user.setRol(rol);
         databaseReference.child("Usuario").child(id).setValue(user);
+
+
+        Curso curso = new Curso();
+        curso.setId_curso(id_curso);
+        curso.setNombre_curso(name_curso);
+        curso.setId_usuarios(id);
         Toast.makeText(getContext(), "Este usuario fue actualizado exitosamente", Toast.LENGTH_SHORT).show();
     }
     public void setBtneliminar(View view){
