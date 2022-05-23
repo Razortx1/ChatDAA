@@ -64,46 +64,13 @@ public class editar_eliminar_apoderado extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        databaseReference.child("Usuario").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot objeto: snapshot.getChildren()) {
-                    Usuario user = objeto.getValue(Usuario.class);
-                    if (user.getRut().equals(rut_alumno.getText().toString())){
-                         id_alumno = user.getId();
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
 
         view = inflater.inflate(R.layout.fragment_editar_eliminar_apoderado, container, false);
-        btn_actualizar = (Button) view.findViewById(R.id.btn_delete_apoderado);
+        btn_actualizar = (Button) view.findViewById(R.id.btn_edit_apoderado);
         btn_actualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println(id_alumno);
-                Usuario user = new Usuario();
-                user.setId(id);
-                user.setRut(rut_user.getText().toString());
-                user.setUser_name(name_user.getText().toString());
-                user.setContraseña(Hash.md5("123"));
-                user.setRol(rol);
-                databaseReference.child("Usuario").child(id).setValue(user);
-
-
-                Apoderado apoderado = new Apoderado();
-                apoderado.setId_apoderado(id);
-                apoderado.setId_alumno(id_alumno);
-                databaseReference.child("Apoderado").child(id).setValue(apoderado);
-
-                Toast.makeText(getContext(), "Este usuario fue actualizado exitosamente", Toast.LENGTH_SHORT).show();
+                setBtn_actualizar(view);
             }
         });
         btn_eliminaruser = (Button) view.findViewById(R.id.btn_delete_apoderado);
@@ -124,6 +91,47 @@ public class editar_eliminar_apoderado extends Fragment {
         name_user = (EditText) view.findViewById(R.id.txt_name_edit_delete_apoderado);
         rut_alumno = (EditText) view.findViewById(R.id.txt_user_rut_a);
         pass = (EditText) view.findViewById(R.id.txt_pass_edit_delete_apoderado);
+    }
+
+    public void setBtn_actualizar(View view){
+        Usuario user = new Usuario();
+        user.setId(id);
+        user.setRut(rut_user.getText().toString());
+        user.setUser_name(name_user.getText().toString());
+        user.setContraseña(Hash.md5("123"));
+        user.setRol(rol);
+
+
+        databaseReference.child("Usuario").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot objeto: snapshot.getChildren()) {
+                    Usuario user = objeto.getValue(Usuario.class);
+                    if (user.getRut().equals(rut_alumno.getText().toString())){
+                        id_alumno = user.getId();
+                    }
+                }
+                System.out.println(id_alumno);
+                Apoderado apoderado = new Apoderado();
+                apoderado.setId_apoderado(id);
+                apoderado.setId_alumno(id_alumno);
+                String isempy = apoderado.getId_alumno();
+
+                if (isempy == null){
+                    Toast.makeText(getContext(), "El alumno no existe, intentelo nuevamente", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    databaseReference.child("Usuario").child(id).setValue(user);
+                    databaseReference.child("Apoderado").child(id).child(apoderado.getId_alumno()).setValue(apoderado);
+                    Toast.makeText(getContext(), "Este usuario fue actualizado exitosamente", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
     public void setBtneliminar(View view){
         databaseReference.child("Usuario").child(id).removeValue();
