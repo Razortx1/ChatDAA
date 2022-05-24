@@ -1,19 +1,18 @@
 package Modelo;
 
 public class Curso {
-    private Integer id_curso;
+    private String id_curso;
     private String nombre_curso;
-    private String id_docentes;
-    private String id_alumnos;
+    private String id_usuarios;
 
     public Curso() {
     }
 
-    public Integer getId_curso() {
+    public String getId_curso() {
         return id_curso;
     }
 
-    public void setId_curso(Integer id_curso) {
+    public void setId_curso(String id_curso) {
         this.id_curso = id_curso;
     }
 
@@ -25,19 +24,11 @@ public class Curso {
         this.nombre_curso = nombre_curso;
     }
 
-    public String getId_docentes() {
-        return id_docentes;
+    public String getId_usuarios() {
+        return id_usuarios;
     }
 
-    public void setId_docentes(String id_docentes) {
-        this.id_docentes = id_docentes;
-    }
-
-    public String getId_alumnos() {
-        return id_alumnos;
-    }
-
-    public void setId_alumnos(String id_alumnos) {
-        this.id_alumnos = id_alumnos;
+    public void setId_usuarios(String id_usuarios) {
+        this.id_usuarios = id_usuarios;
     }
 }

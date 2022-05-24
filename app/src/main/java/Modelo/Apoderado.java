@@ -1,25 +1,25 @@
 package Modelo;
 
 public class Apoderado {
-    private Integer id_apoderado;
-    private Integer id_alumno;
+    private String id_apoderado;
+    private String id_alumno;
 
     public Apoderado() {
     }
 
-    public Integer getId_apoderado() {
+    public String getId_apoderado() {
         return id_apoderado;
     }
 
-    public void setId_apoderado(Integer id_apoderado) {
+    public void setId_apoderado(String id_apoderado) {
         this.id_apoderado = id_apoderado;
     }
 
-    public Integer getId_alumno() {
+    public String getId_alumno() {
         return id_alumno;
     }
 
-    public void setId_alumno(Integer id_alumno) {
+    public void setId_alumno(String id_alumno) {
         this.id_alumno = id_alumno;
     }
 }

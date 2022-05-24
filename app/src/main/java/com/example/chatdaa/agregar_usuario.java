@@ -1,5 +1,6 @@
 package com.example.chatdaa;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,8 +68,14 @@ public class agregar_usuario extends DialogFragment {
                         user.setUser_name(user_name);
                         user.setContraseña(contraseña);
                         user.setRol(rol);
+                        System.out.println(user);
                         databaseReference.child("Usuario").child(id).setValue(user);
                         Toast.makeText(getContext(), "Usuario creado con exito", Toast.LENGTH_SHORT).show();
+
+                        Activity activity = getActivity();
+                        if (activity != null){
+                            activity.onBackPressed();
+                        }
                     }
             }
         });
