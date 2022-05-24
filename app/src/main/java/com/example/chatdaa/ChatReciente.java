@@ -26,26 +26,26 @@ public class ChatReciente extends AppCompatActivity {
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
 
-        NavigationView nav = (NavigationView) findViewById(R.id.nav_1);
+        NavigationView nav = (NavigationView) findViewById(R.id.nav);
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.inicio) {
-                    Toast.makeText(ChatReciente.this, "Transportando a Inicio", Toast.LENGTH_SHORT).show();
-                    Intent h = new Intent(getApplicationContext(), InicioAlumno.class);
-                    startActivity(h);
+                    Toast.makeText(getApplicationContext(), "Ya te encuentras en inicio", Toast.LENGTH_SHORT).show();
                 }else if(id == R.id.chat_r){
-                    Toast.makeText(ChatReciente.this, "Trasnportando a Chat Reciente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Trasnportando a Chat Reciente", Toast.LENGTH_SHORT).show();
+                    Intent o = new Intent(getApplicationContext(), ChatReciente.class);
+                    startActivity(o);
                 }else if (id == R.id.cerrar_sesion){
-                    Toast.makeText(ChatReciente.this, "Cerrando Sesion", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(i);
+                    Toast.makeText(getApplicationContext(), "Cerrando Sesion", Toast.LENGTH_SHORT).show();
+                    Intent r = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(r);
                 }
                 return false;
             }
         });
-        DrawerLayout dl = (DrawerLayout) findViewById(R.id.ppi_1);
+        DrawerLayout dl = (DrawerLayout) findViewById(R.id.principal_curso);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 

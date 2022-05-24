@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void login(View view) {
-        txt_username = this.findViewById(R.id.txt_user);
+        txt_username = this.findViewById(R.id.txt_user_rut);
         txtcontraseña = this.findViewById(R.id.pass_user);
         String txt_user = txt_username.getText().toString();
         String pass = txtcontraseña.getText().toString();

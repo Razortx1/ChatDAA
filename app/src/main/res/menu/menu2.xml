@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/inicio" />
-    <item android:title="@string/cerrar_cesion" />
+    <item
+        android:id="@+id/inicio1"
+        android:title="@string/inicio" />
+    <item
+        android:id="@+id/cerrar_sesion1"
+        android:title="@string/cerrar_cesion" />
 </menu>

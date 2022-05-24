@@ -48,6 +48,7 @@ public class InicioApoderados extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        usuarioList.clear();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_apoderados);
         iniciarFirebase();

@@ -32,20 +32,20 @@ public class InicioAlumno extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.inicio) {
-                    Toast.makeText(InicioAlumno.this, "Transportando a Inicio", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Ya te encuentras en inicio", Toast.LENGTH_SHORT).show();
                 }else if(id == R.id.chat_r){
-                    Toast.makeText(InicioAlumno.this, "Trasnportando a Chat Reciente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Trasnportando a Chat Reciente", Toast.LENGTH_SHORT).show();
                     Intent o = new Intent(getApplicationContext(), ChatReciente.class);
                     startActivity(o);
                 }else if (id == R.id.cerrar_sesion){
-                    Toast.makeText(InicioAlumno.this, "Cerrando Sesion", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Cerrando Sesion", Toast.LENGTH_SHORT).show();
                     Intent r = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(r);
                 }
                 return false;
             }
         });
-        DrawerLayout dl = (DrawerLayout) findViewById(R.id.ppi);
+        DrawerLayout dl = (DrawerLayout) findViewById(R.id.principal_curso);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 

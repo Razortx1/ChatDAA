@@ -50,6 +50,7 @@
         android:id="@+id/nav_docente"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="start"
         app:headerLayout="@layout/header"
         app:menu="@menu/menu" />
 
