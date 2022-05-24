@@ -122,7 +122,7 @@ public class editar_eliminar_apoderado extends Fragment {
                 }
                 else {
                     databaseReference.child("Usuario").child(id).setValue(user);
-                    databaseReference.child("Apoderado").child(id).child(apoderado.getId_alumno()).setValue(apoderado);
+                    databaseReference.child("Apoderado").child(apoderado.getId_apoderado()).child(apoderado.getId_alumno()).setValue(apoderado);
                     Toast.makeText(getContext(), "Este usuario fue actualizado exitosamente", Toast.LENGTH_SHORT).show();
                 }
             }
