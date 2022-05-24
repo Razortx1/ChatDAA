@@ -51,18 +51,34 @@ public class InicioApoderados extends AppCompatActivity {
             usuario.setUser_name(j.getString("user_name"));
             usuario.setContraseña(j.getString("contraseña"));
             usuario.setId(j.getString("id"));
-            usuario.setRut(j.getString("rut"));
+            usuario.setRut(j.getString("Rut"));
         }
         catch (JSONException r){
             r.printStackTrace();
         }
-        databaseReference.child("Apoderado").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Apoderado").child(usuario.getId()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot objeto: snapshot.getChildren()) {
+                    System.out.println("OBJETO: "+objeto.toString());
                     Apoderado apoderado1 = objeto.getValue(Apoderado.class);
+                    System.out.println(apoderado1.getId_apoderado());
+                    System.out.println(apoderado1.getId_alumno());
                     if (usuario.getId().equals(apoderado1.getId_apoderado())){
-                        
+                        System.out.println(apoderado1);
+                        databaseReference.child("Usuario").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                for (DataSnapshot alumno: snapshot.getChildren()) {
+
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                 }
