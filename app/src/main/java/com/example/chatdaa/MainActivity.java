@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         iniciarFirebase();
-
+      
         btn_ingresar = (Button) findViewById(R.id.btn_ingreso);
         btn_ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,9 +90,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void cambiar_contra(View v){
-        Intent o = new Intent(getApplicationContext(), CambioContra.class);
-        startActivity(o);}
+    public void cambiar_contra(View v) {
+        txt_username = this.findViewById(R.id.txt_user_rut);
+        String txtusername = txt_username.getText().toString();
+        if (txtusername.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Para poder cambiar la contraseña, al menos ingrese nombre", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Intent o = new Intent(getApplicationContext(), CambioContra.class);
+            startActivity(o);
+        }
+    }
 
     public void iniciarFirebase(){
         FirebaseApp.initializeApp(getApplicationContext());
