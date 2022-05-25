@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     EditText txt_username, txtcontraseña;
     Button btn_ingresar;
 
+    String txt_user, finalpass;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +48,20 @@ public class MainActivity extends AppCompatActivity {
     public void login(View view) {
         txt_username = this.findViewById(R.id.txt_user_rut);
         txtcontraseña = this.findViewById(R.id.pass_user);
-        String txt_user = txt_username.getText().toString();
+        txt_user = txt_username.getText().toString();
         String pass = txtcontraseña.getText().toString();
         pass = Hash.md5(pass);
-        String finalpass = Hash.md5(pass);
+        finalpass = pass;
         databaseReference.child("Usuario").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot objeto : snapshot.getChildren()) {
                     Usuario user = objeto.getValue(Usuario.class);
-                    if (user.getRut().equals(txt_user) || user.getUser_name().equals(user.getUser_name()) && user.getContraseña().equals(finalpass)) {
+
+                    if (user.getRut().equals(txt_user) && user.getContraseña().equals(finalpass)) {
+                        System.out.println(user.getRut());
+                        System.out.println(user.getRol());
+                        System.out.println(user.getUser_name());
                         if (user.getRol().equals("Apoderado")) {
                             Gson gson = new Gson();
                             String json = gson.toJson(user);
@@ -66,14 +72,14 @@ public class MainActivity extends AppCompatActivity {
                         if (user.getRol().equals("Alumno")) {
                             Gson gson = new Gson();
                             String json = gson.toJson(user);
-                            Intent i = new Intent(getApplicationContext(), InicioApoderados.class);
+                            Intent i = new Intent(getApplicationContext(), InicioAlumno.class);
                             i.putExtra("Usuario", json);
                             startActivity(i);
                         }
                         if (user.getRol().equals("Docente")) {
                             Gson gson = new Gson();
                             String json = gson.toJson(user);
-                            Intent i = new Intent(getApplicationContext(), InicioApoderados.class);
+                            Intent i = new Intent(getApplicationContext(), InicioDocentes.class);
                             i.putExtra("Usuario", json);
                             startActivity(i);
                         }

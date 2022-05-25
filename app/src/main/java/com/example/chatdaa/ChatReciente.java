@@ -26,7 +26,7 @@ public class ChatReciente extends AppCompatActivity {
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
 
-        NavigationView nav = (NavigationView) findViewById(R.id.nav);
+        NavigationView nav = (NavigationView) findViewById(R.id.nav_1);
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -45,7 +45,7 @@ public class ChatReciente extends AppCompatActivity {
                 return false;
             }
         });
-        DrawerLayout dl = (DrawerLayout) findViewById(R.id.principal_curso);
+        DrawerLayout dl = (DrawerLayout) findViewById(R.id.ppi_1);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 

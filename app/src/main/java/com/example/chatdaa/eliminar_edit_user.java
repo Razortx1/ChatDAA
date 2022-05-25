@@ -110,7 +110,7 @@ public class eliminar_edit_user extends Fragment {
         curso.setNombre_curso(name_curso);
         curso.setId_usuarios(id);
         System.out.println(curso.getNombre_curso());
-        databaseReference.child("Curso").child(name_curso).child(id).setValue(curso);
+        databaseReference.child("Curso").child(id).child(id_curso).setValue(curso);
         Toast.makeText(getContext(), "Este usuario fue actualizado exitosamente", Toast.LENGTH_SHORT).show();
     }
     public void setBtneliminar(View view){

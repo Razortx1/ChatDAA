@@ -48,7 +48,6 @@ public class InicioApoderados extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        usuarioList.clear();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_apoderados);
         iniciarFirebase();
@@ -95,7 +94,7 @@ public class InicioApoderados extends AppCompatActivity {
                                     Gson gson = new Gson();
                                     String json1 = gson.toJson(apoderado);
                                     Intent in = new Intent(getApplicationContext(), InicioAlumno.class);
-                                    in.putExtra("usuario", json1);
+                                    in.putExtra("Usuario", json1);
                                     startActivity(in);
                                 }
                             });
