@@ -41,7 +41,6 @@ public class InicioAlumno extends AppCompatActivity {
     ListView listView_docente;
     ArrayAdapter<Curso> addocente;
 
-    Usuario Usuario1;
     String json;
     Usuario user;
 
@@ -74,14 +73,14 @@ public class InicioAlumno extends AppCompatActivity {
                 }
                 databaseReference.child("Usuario").child(curso1.getId_usuarios()).addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for (DataSnapshot objeto: snapshot.getChildren()) {
-                            Usuario1 = objeto.getValue(Usuario.class);
-                            System.out.println(Usuario1.getRol());
-                            System.out.println(Usuario1.getUser_name());
-                            System.out.println(Usuario1.getRut());
-                            System.out.println(Usuario1.getId());
-                            System.out.println(Usuario1.getContraseña());
+                    public void onDataChange(@NonNull DataSnapshot result) {
+                        for (DataSnapshot docente: result.getChildren()) {
+                            Usuario usuario1 = result.getValue(Usuario.class);
+                            System.out.println(usuario1.getContraseña());
+                            System.out.println(usuario1.getId());
+                            System.out.println(usuario1.getRol());
+                            System.out.println(usuario1.getRut());
+                            System.out.println(usuario1.getUser_name());
                         }
                     }
 

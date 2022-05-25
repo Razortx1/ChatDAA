@@ -59,9 +59,6 @@ public class MainActivity extends AppCompatActivity {
                     Usuario user = objeto.getValue(Usuario.class);
 
                     if (user.getRut().equals(txt_user) && user.getContraseña().equals(finalpass)) {
-                        System.out.println(user.getRut());
-                        System.out.println(user.getRol());
-                        System.out.println(user.getUser_name());
                         if (user.getRol().equals("Apoderado")) {
                             Gson gson = new Gson();
                             String json = gson.toJson(user);
